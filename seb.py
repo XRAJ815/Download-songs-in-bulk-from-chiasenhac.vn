@@ -112,7 +112,7 @@ def download(down, name):
 	        if chunk:
 	             song.write(chunk)
 
-loc = ("sp.xlsx")
+loc = ("list.xlsx")
 
 ws = xlrd.open_workbook(loc)
 sheet = ws.sheet_by_index(0)
