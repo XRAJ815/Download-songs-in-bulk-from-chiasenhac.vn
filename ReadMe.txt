@@ -2,6 +2,8 @@ This script is created to download songs in bulk from http://chiasenhac.vn/ webs
 
 Write the name and its artist in respective column.
 
+in python script, in the last for loop for page "for page in range(x)" change whe value of x as per the number of songs you have put in the excel list
+
 This script will find best match and download the file.
 
 IMPORTANT NOTE :- This script is not perfect so it may find different songs than required. 
