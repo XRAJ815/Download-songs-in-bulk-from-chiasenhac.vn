@@ -86,8 +86,7 @@ def get_url(song_name, artist_name):
 				return(down, name)
 				break
 
-	if d != 1:
-		return("none", "none")
+
 
 	if m4a == 0:
 		for d_qual in d_soup.find_all('a', href=True):
@@ -100,7 +99,8 @@ def get_url(song_name, artist_name):
 				d = 1
 				return(down, name)
 				break
-	
+	if d != 1:
+		return("none", "none")	
 
 def download(down, name):
 	r = requests.get(down, stream = True)
