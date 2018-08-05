@@ -17,7 +17,7 @@ def get_url(song_name, artist_name):
 	base_search = base_url + search_name + page_url
 	current_page = '1'
 		
-	previous_match = 0
+	best_match = 0
 	for pages in range(3):
 		search_url = base_search + current_page
 		int_page=int(current_page)
@@ -31,11 +31,11 @@ def get_url(song_name, artist_name):
 			print(song_detail)
 			name_rat = similar(song_detail.lower(), song_name)
 			art_rat = similar(song_detail.lower(), artist_name)
-			best_match = (name_rat + art_rat)/2
+			current_match = (name_rat + art_rat)/2
 			print(best_match)
-			if best_match > previous_match:
+			if current_match > best_match:
 				hold_list = page_list
-				previous_match = best_match
+				best_match = current_match
 			print(hold_list.text)	
 		
 	for song_url in hold_list.find_all('a', href=True):
